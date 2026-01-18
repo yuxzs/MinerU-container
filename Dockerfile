@@ -16,12 +16,9 @@ RUN apt-get update \
 
 RUN mkdir /app
 RUN python3 -m venv $VIRTUAL_ENV
-RUN pip install --upgrade pip
-RUN pip install uv
+RUN source "$VIRTUAL_ENV/bin/activate"
 
 WORKDIR /app
-# RUN uv venv
-# RUN source .venv/bin/activate
-RUN uv pip install -U "mineru[all]"
+RUN pip install -U "mineru[all]"
 
 CMD ["mineru-api", "--host", "0.0.0.0", "--port", "8000"]
