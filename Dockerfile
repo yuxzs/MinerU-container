@@ -19,6 +19,6 @@ RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 WORKDIR /app
-RUN pip install -U "mineru[all]"
+RUN pip install --no-cache-dir -U "mineru[all]"
 
 CMD ["mineru-api", "--host", "0.0.0.0", "--port", "8000"]
