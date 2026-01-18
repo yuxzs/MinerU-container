@@ -16,7 +16,7 @@ RUN apt-get update \
 
 RUN mkdir /app
 RUN python3 -m venv $VIRTUAL_ENV
-ENV PATH="$VENV_PATH/bin:$PATH"
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 WORKDIR /app
 RUN pip install -U "mineru[all]"
