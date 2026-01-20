@@ -1,5 +1,5 @@
 # FROM python:3.11-slim
-FROM nvidia/cuda:13.0.2-cudnn-runtime-ubuntu24.04
+FROM nvidia/cuda:13.1.0-base-ubuntu24.04
 
 ENV PYTHONUNBUFFERED=1 \
     VIRTUAL_ENV=/app/venv \
